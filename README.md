@@ -33,21 +33,21 @@ Essentially clone the repo on your local machine. Navigate to the directory you 
 
 ecomBackend is just the server-side workings of a ecommerce site and so only handles requests and send responses.
 
-To utilise the functionality, install mysql on your local, run
-```
-mysql -u root -p
+To utilise the functionality, you need to add your mysql details to a .env structured like the example provided.
 
-source schema.sql
+```.env
+DB_USER='add-username-here'
+DB_PW='add-mysql-password-here'
+DB_NAME='ecommerce_db' **Leave this as is**
 ```
-which will create the database in your mysql server.
+then run the seed to seed the data in the database and finally start the server, both with the code below
 
-Add your details to the .env file and run node seeds/seed.js in the terminal which will seed the database you just created with data.
-
-Finally, run 
+```terminal
+node seeds/
+node server.js
 ```
-node index.js
-``` 
-to start your server on your local and use Insomnia, Postman, or any other route testing application to utilse the endpoints of ecomBackend seen below.
+
+You can then use tools like Insomnia, Postman, or any other route testing application to utilse the endpoints of ecomBackend seen below.
 
 ![Using ecomBackend](./assets/imgOne.png)
 
